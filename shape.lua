@@ -33,6 +33,13 @@ lprimeShape[3] = lprimeRot3
 lprimeShape[4] = lprimeRot4
 
 -- Constructor
-function Shape.new(self, table)
-  self.table = table
+function Shape.new(self, whichShape)
+  self.shape = possibleShapes[whichShape]
+  self.currentRot = 1
+  self.table = self.shape[1]
+end
+
+function Shape.rotate(self)
+  self.currentRot = math.fmod(self.currentRot, 4) + 1 -- (x = x % 4) + 1
+  self.table = self.shape[self.currentRot]
 end
