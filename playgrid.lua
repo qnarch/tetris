@@ -15,12 +15,6 @@ function Playgrid.new(self)
     end
   end
 
-  -- A shape
-  local shapeArray = {}
-  shapeArray[1] = {1,1,1}
-  shapeArray[2] = {0,0,1}
-  shapeArray[3] = {0,0,0}
-
   -- Array and origin position of the active shape
   self.activeShape = Shape(shapeArray)
   self.activePos = {x=4, y=0}
